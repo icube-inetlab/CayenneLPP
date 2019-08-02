@@ -255,3 +255,22 @@ uint8_t CayenneLPP::addGPS(uint8_t channel, float latitude, float longitude, flo
 
   return cursor;
 }
+
+uint8_t CayenneLPP::addMicroVoltage(uint8_t channel, uint32_t microvoltage)
+{
+  if ((cursor + LPP_MICRO_VOLTAGE_SIZE) > maxsize)
+  {
+    return 0;
+  }
+  int32_t val = microvoltage;
+
+  buffer[cursor++] = channel;
+  buffer[cursor++] = LPP_MICRO_VOLTAGE;
+  buffer[cursor++] = val >> 24;
+  buffer[cursor++] = val >> 16;
+  buffer[cursor++] = val >> 8;
+  buffer[cursor++] = val;
+
+  return cursor;
+}
+

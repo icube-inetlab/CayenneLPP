@@ -32,6 +32,7 @@ addBarometricPressure	KEYWORD2
 addUnixTime	KEYWORD2
 addGyrometer	KEYWORD2
 addGPS	KEYWORD2
+addMicroVoltage	KEYWORD2
 
 #######################################
 # Constants (LITERAL1)
